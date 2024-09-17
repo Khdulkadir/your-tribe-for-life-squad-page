@@ -9,15 +9,35 @@
     - ik geef de Card component props mee die ik herbruik in de Card.svelte component -->
   <main>
     <h1> Squad</h1>
-    <section class ="cards-container">
+    <section class ="card-container">
       {#each data.persons as person, index}
           <Card
               name = {person.name}
-              avatar = {person.avatar}
-              prefix = {person.prefix}
-              surname = {person.surname}
               id = {person.id}
           />
       {/each}
     </section>
   </main>
+
+  <style>
+  
+  :global(body) {
+   background-color: #fff3b3;
+   font-family: 'Pokemon Hollow', sans-serif;
+   margin: 1em;
+  }
+  /* Container for card layout */
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+  }
+  h1{
+    text-align: center;
+    font-size: 5em;
+    color: #074794;
+  }
+  </style>
