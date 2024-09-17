@@ -11,6 +11,7 @@
         const height = tilt.clientHeight
         const width = tilt.clientWidth
 
+
         tilt.addEventListener('mousemove', (e) => {
             const x = e.layerX
             const y = e.layerY
@@ -18,6 +19,7 @@
 
             const xRotate = multiplier * ((x - width / 2) / width)
             const yRotate = -multiplier * ((y - height / 2) / height)
+
 
             tilt.style.transform = tiltMove(xRotate, yRotate)
         })
@@ -69,7 +71,6 @@
 </main>
 
 <style>
-
   .stars, .twinkling, .clouds {
 	position:absolute;
 	display:block;
@@ -152,7 +153,7 @@
 
     100% {
       opacity: 1;
-      filter: blur(0) brightness(1);
+      filter: revert;
     }
   }
 
