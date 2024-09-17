@@ -135,8 +135,8 @@
     flex-direction: column;
     gap: 20px;
     display: flex;
-    animation: appear 0.5s 4.5s forwards;
-    visibility: hidden;
+    animation: appear 1.5s 4.5s forwards;
+    opacity: 0;
     border: 10px solid #ffe557;
     border-radius: 15px;
     padding: 20px;
@@ -145,11 +145,14 @@
   }
 
   @keyframes appear {
-    from {
-      visibility: none;
+    0% {
+      opacity: 0;
+      filter: blur(10px) brightness(3);
     }
-    to {
-      visibility: visible;
+
+    100% {
+      opacity: 1;
+      filter: blur(0) brightness(1);
     }
   }
 
