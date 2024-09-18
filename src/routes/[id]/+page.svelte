@@ -4,15 +4,15 @@
   import { onMount } from 'svelte'
 
   onMount(() => {
-    const tiltEls = document.querySelectorAll('.card')
-    const tiltMove = (x, y) => `perspective(500px) scale(1.1) rotateX(${x}deg) rotateY(${y}deg)`
+    const cards = document.querySelectorAll('.card')
+    const cardMove = (x, y) => `perspective(500px) scale(1.1) rotateX(${x}deg) rotateY(${y}deg)`
 
-    tiltEls.forEach(tilt => {
-        const height = tilt.clientHeight
-        const width = tilt.clientWidth
+    cards.forEach(card => {
+        const height = card.clientHeight
+        const width = card.clientWidth
 
 
-        tilt.addEventListener('mousemove', (e) => {
+        card.addEventListener('mousemove', (e) => {
             const x = e.layerX
             const y = e.layerY
             const multiplier = 30
@@ -21,10 +21,10 @@
             const yRotate = -multiplier * ((y - height / 2) / height)
 
 
-            tilt.style.transform = tiltMove(xRotate, yRotate)
+            card.style.transform = cardMove(xRotate, yRotate)
         })
 
-        tilt.addEventListener('mouseout', () => tilt.style.transform = tiltMove(0, 0))
+        card.addEventListener('mouseout', () => card.style.transform = cardMove(0, 0))
     })
   })
 </script>
@@ -33,15 +33,19 @@
   <div class="stars"></div>
   <div class="twinkling"></div>
   <div class="clouds"></div>
-    <a class="return" href="/squad/{data.persons[0].squad_id}">Terug 
-      <svg class="return-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="50" height="50" viewBox="0 0 256 256" xml:space="preserve">
-        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-        <path d="M -0.544 18.757 l 10.436 7.057 c 0.11 0.074 0.251 0.082 0.367 0.02 c 0.117 -0.062 0.19 -0.183 0.19 -0.315 v -2.852 c 4.298 -0.094 9.392 -1.857 13.389 -4.65 c 4.898 -3.422 7.595 -7.97 7.595 -12.806 c 0 -0.168 -0.117 -0.313 -0.282 -0.349 c -0.025 -0.006 -0.05 -0.008 -0.075 -0.008 c -0.138 0 -0.267 0.08 -0.325 0.21 c -2.793 6.181 -9.623 9.348 -20.302 9.417 v -3.078 c 0 -0.132 -0.073 -0.253 -0.19 -0.315 c -0.116 -0.062 -0.258 -0.055 -0.367 0.02 l -10.436 7.057 c -0.098 0.066 -0.157 0.177 -0.157 0.296 S -0.642 18.691 -0.544 18.757 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(2.8008 0 0 2.8008 1.9639999999999986 1.9639999999999702) " stroke-linecap="round" />
-        </g>
-      </svg>
-    </a>
+
+  <a class="return" href="/squad/{data.persons[0].squad_id}">Terug 
+    <svg class="return-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="50" height="50" viewBox="0 0 256 256" xml:space="preserve">
+      <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+      <path d="M -0.544 18.757 l 10.436 7.057 c 0.11 0.074 0.251 0.082 0.367 0.02 c 0.117 -0.062 0.19 -0.183 0.19 -0.315 v -2.852 c 4.298 -0.094 9.392 -1.857 13.389 -4.65 c 4.898 -3.422 7.595 -7.97 7.595 -12.806 c 0 -0.168 -0.117 -0.313 -0.282 -0.349 c -0.025 -0.006 -0.05 -0.008 -0.075 -0.008 c -0.138 0 -0.267 0.08 -0.325 0.21 c -2.793 6.181 -9.623 9.348 -20.302 9.417 v -3.078 c 0 -0.132 -0.073 -0.253 -0.19 -0.315 c -0.116 -0.062 -0.258 -0.055 -0.367 0.02 l -10.436 7.057 c -0.098 0.066 -0.157 0.177 -0.157 0.296 S -0.642 18.691 -0.544 18.757 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(2.8008 0 0 2.8008 1.9639999999999986 1.9639999999999702) " stroke-linecap="round" />
+      </g>
+    </svg>
+  </a>
+
   <div class="pokeball"></div>
+
   <article class="card">
+
     <div class="title-container">
       <img class="card-type" src="/assets/card-type.png" alt="card type" height="20">
       <h1>{data.persons[0].name} {data.persons[0].prefix} {data.persons[0].surname}</h1>
@@ -53,6 +57,7 @@
         <img class="profile-picture" src="/assets/pikachu.png" alt="Avatar van {data.persons[0].name}" width="100" height="100">
       {/if}
     </div>
+
     <div class="info-container">
       <div class="nickname-container">
         <img class="energy" src="http://res.cloudinary.com/bpettis/image/upload/v1516916046/firetype_otgmwq.png" alt="Fire Energy Type Symbol" width="20" height="20">
@@ -67,6 +72,7 @@
         <a class="website" href="{data.persons[0].website}" target="_blank">Website</a>
       </div>
     </div>
+
   </article>
 </main>
 
@@ -74,42 +80,53 @@
   .stars, .twinkling, .clouds {
 	position:absolute;
 	display:block;
-	top:0; bottom:0;
-	left:0; right:0;
-	width:100%; height:100%;
+	top:0;
+  bottom:0;
+	left:0;
+  right:0;
+	width:100%;
+  height:100%;
 }
 
-.stars {
-	z-index: -3;
-	background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
-}
+  .stars {
+    z-index: -3;
+    background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
+  }
 
-.twinkling{
-	z-index: -2;
-	background:transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
-	animation: move-twink-back 200s linear infinite;
-}
+  .twinkling{
+    z-index: -2;
+    background:transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
+    animation: move-twink-back 200s linear infinite;
+  }
 
-.clouds{
-	z-index: -1;
+  .clouds{
+    z-index: -1;
     background:transparent url('https://i.imgur.com/mHbScrQ.png') repeat top center;
-	animation: move-clouds-back 200s linear infinite;
-}
+    animation: move-clouds-back 200s linear infinite;
+  }
 
-@keyframes move-twink-back {
-	from {background-position:0 0;}
-	to {background-position:-10000px 5000px;}
-}
+  @keyframes move-twink-back {
+    from {
+      background-position:0 0;
+    }
+    to {
+      background-position:-10000px 5000px;
+    }
+  }
 
-@keyframes move-clouds-back {
-	from {background-position:0 0;}
-	to {background-position:10000px 0;}
-}
+  @keyframes move-clouds-back {
+    from {
+      background-position:0 0;
+    }
+    to {
+      background-position:10000px 0;
+    }
+  }
 
   main {
-  display: grid;
-  place-items: center;
-  height: 100vh;
+    display: grid;
+    place-items: center;
+    height: 100vh;
   }
 
   .return {
@@ -166,10 +183,9 @@
   .title-container {
     display: flex;
     align-items: center;
-
   }
 
-  h1 {
+  .title-container h1 {
     text-align: center;
     margin: 0;
     padding: 0;
@@ -224,24 +240,24 @@
     color: navy;
   }
 
-.pokeball {
-  display: block;
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  background: radial-gradient(
-      white 16px,
-      black 17px 18px,
-      white 19px 24px,
-      black 25px 32px,
-      transparent 33px
-    ),
-    linear-gradient(to bottom, red 0 80px, black 81px 96px, white 97px 100%);
-  border-radius: 50%;
-  border: 8px solid black;
-  animation: fall 0.5s,
-    shake .75s 1.5s 3,
-    catch 0.5s 3.75s forwards;
+  .pokeball {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: radial-gradient(
+        white 16px,
+        black 17px 18px,
+        white 19px 24px,
+        black 25px 32px,
+        transparent 33px
+      ),
+      linear-gradient(to bottom, red 0 80px, black 81px 96px, white 97px 100%);
+    border-radius: 50%;
+    border: 8px solid black;
+    animation: fall 0.5s,
+      shake .75s 1.5s 3,
+      catch 0.5s 3.75s forwards;
   }
 
   @keyframes shake {
@@ -264,6 +280,7 @@
       transform: translateX(0) rotate(0);
     }
   }
+  
   @keyframes fall {
     0% {
       transform: translateY(-200%);
