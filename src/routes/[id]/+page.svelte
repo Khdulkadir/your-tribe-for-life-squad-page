@@ -60,15 +60,15 @@
 
     <div class="info-container">
       <div class="nickname-container">
-        <img class="energy" src="http://res.cloudinary.com/bpettis/image/upload/v1516916046/firetype_otgmwq.png" alt="Fire Energy Type Symbol" width="20" height="20">
+        <img class="energy" src="/assets/firetype.png" alt="Fire Energy Type Symbol" width="20" height="20">
         <p class="nickname">{data.persons[0].nickname}</p>
       </div>
       <div class="github-container">
-        <img class="energy" src="http://res.cloudinary.com/bpettis/image/upload/v1516916049/normaltype_ztufzq.png" alt="Normal Energy Type Symbol" width="20" height="20">
+        <img class="energy" src="/assets/neutraltype.png" alt="Normal Energy Type Symbol" width="20" height="20">
         <p class="github">@{data.persons[0].github_handle}</p>
       </div>
       <div class="github-container">
-        <img class="energy" src="http://res.cloudinary.com/bpettis/image/upload/v1516916052/watertype_nkics0.png" alt="Water Energy Type Symbol" width="20" height="20">
+        <img class="energy" src="/assets/watertype.png" alt="Water Energy Type Symbol" width="20" height="20">
         <a class="website" href="{data.persons[0].website}" target="_blank">Website</a>
       </div>
     </div>
@@ -90,18 +90,18 @@
 
   .stars {
     z-index: -3;
-    background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
+    background: #000 url('/assets/stars') repeat top center;
   }
 
   .twinkling{
     z-index: -2;
-    background:transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
+    background:transparent url('/assets/twinkling') repeat top center;
     animation: move-twink-back 200s linear infinite;
   }
 
   .clouds{
     z-index: -1;
-    background:transparent url('https://i.imgur.com/mHbScrQ.png') repeat top center;
+    background:transparent url('/assets/clouds') repeat top center;
     animation: move-clouds-back 200s linear infinite;
   }
 
@@ -148,7 +148,7 @@
   .card {
     height: 400px;
     width: 250px;
-    background-image: url(https://img00.deviantart.net/0614/i/2012/106/a/e/classic_pkmn_tcg_texture_pack_by_flamingclaw-d4wcj31.png);
+    background-image: url(/assets/card-background.jpg);
     background-size: cover;
     flex-direction: column;
     gap: 20px;
@@ -280,7 +280,7 @@
       transform: translateX(0) rotate(0);
     }
   }
-  
+
   @keyframes fall {
     0% {
       transform: translateY(-200%);
