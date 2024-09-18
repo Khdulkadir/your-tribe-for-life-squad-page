@@ -5,14 +5,13 @@ Welkom bij de Your Tribe for Life squadpage, een website gebouwd met SvelteKit. 
 
 ## Inhoud
 
-### [- Kenmerken]()
-### [- Preview ]()
-### [- Live pagina]()
-### [- Gebruikersaanwijzing]()
-### [- Installatiehandleiding]()
-### [- Huisstijl]()
-### [- Contribute]()
-### [- Bronnen]()
+### [- Kenmerken](https://github.com/Khdulkadir/your-tribe-for-life-squad-page?tab=readme-ov-file#kenmerken)
+### [- Preview ](https://github.com/Khdulkadir/your-tribe-for-life-squad-page?tab=readme-ov-file#preview)
+### [- Live pagina](https://github.com/Khdulkadir/your-tribe-for-life-squad-page?tab=readme-ov-file#live-pagina)
+### [- Gebruikersaanwijzing](https://github.com/Khdulkadir/your-tribe-for-life-squad-page?tab=readme-ov-file#gebruikersaanwijzing)
+### [- Huisstijl](https://github.com/Khdulkadir/your-tribe-for-life-squad-page?tab=readme-ov-file#huisstijl)
+### [- Bronnen](https://github.com/Khdulkadir/your-tribe-for-life-squad-page?tab=readme-ov-file#bronnen)
+### [- Installatiehandleiding](https://github.com/Khdulkadir/your-tribe-for-life-squad-page?tab=readme-ov-file#installatiehandleiding-1)
 
 
 ## Kenmerken
@@ -25,17 +24,17 @@ Een overzicht van de belangrijkste functies van de Your Tribe for Life squadpage
 - SvelteKit & Directus API: De website is gebouwd met SvelteKit en haalt de data dynamisch op via de Directus API.
 
 ------------------------------------------------------------------------------------------------------------------
-## preview
+## Preview
 Een visuele demonstratie van de website in actie, zodat gebruikers een idee krijgen van hoe de squadpage eruitziet en hoe het werkt voordat ze de live pagina bezoeken.
 ------------------------------------------------------------------------------------------------------------------
 
 
-## live pagina
+## Live pagina
 Toegang tot de volledig functionele versie van de squadpage, waar gebruikers kunnen navigeren door de squads, de Pokémon-kaarten van leden kunnen bekijken en andere functies kunnen verkennen.
 Bekijk deze [hier](https://your-tribe-for-life-squad-page-plum-phi.vercel.app/)!
 
 
-## gebruikersaanwijzing
+## Gebruikersaanwijzing
 Een gedetailleerde gids die uitlegt hoe gebruikers de squadpage kunnen gebruiken, inclusief stappen voor het selecteren van een squad en het navigeren door de beschikbare informatie over leden.
 
 ### Navigeren door de pagina
@@ -55,7 +54,7 @@ Instructies voor het lokaal opzetten van de squadpage, zodat ontwikkelaars het p
 ------------------------------------------------------------------------------------------------------------------
 
 
-## huisstijl
+## Huisstijl
 Informatie over de ontwerpkeuzes en branding van de squadpage, inclusief kleurenpaletten, typografie en andere visuele elementen die bijdragen aan het Pokémon-thema.
 
 ### Thema
@@ -76,7 +75,7 @@ Pokémonkaarten ontwerp: De squadleden worden weergegeven in de vorm van klassie
 ### Animaties
 Pokéball animatie: De detailpagina bevat een animatie waarbij een Pokéball wordt geopend en de Pokémonkaart van het squadlid tevoorschijn komt.
 
-## bronnen
+## Bronnen
 Hier vind je de bronnen van de tools die we hebben gebruikt. 
 
 ### [Sveltekit](https://kit.svelte.dev/)
