@@ -5,7 +5,7 @@
 
   onMount(() => {
     const cards = document.querySelectorAll('.card')
-    const cardMove = (x, y) => `perspective(500px) scale(1.1) rotateX(${x}deg) rotateY(${y}deg)`
+    const cardMove = (x, y) => `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`
 
     cards.forEach(card => {
         const height = card.clientHeight
@@ -72,7 +72,6 @@
 <main>
   <div class="stars"></div>
   <div class="twinkling"></div>
-  <div class="clouds"></div>
 
   <a class="return" href="/squad/{data.persons[0].squad_id}">Terug 
     <svg class="return-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="50" height="50" viewBox="0 0 256 256" xml:space="preserve">
@@ -85,7 +84,6 @@
   <div class="pokeball"></div>
 
   <article class="card">
-
     <div class="title-container">
       <img class="card-type" src="/assets/card-type.png" alt="card type" height="20" width="60">
       <h1>{data.persons[0].name} {data.persons[0].prefix} {data.persons[0].surname}</h1>
@@ -97,27 +95,25 @@
         <img class="profile-picture" src="/assets/pikachu.png" alt="Avatar van {data.persons[0].name}" width="100" height="100">
       {/if}
     </div>
-
-    <div class="info-container">
-      <div class="nickname-container">
+    <ul class="info-container">
+      <li class="nickname-container">
         <img class="energy" src="/assets/firetype.png" alt="Fire Energy Type Symbol" width="20" height="20">
         <p class="nickname">{data.persons[0].nickname}</p>
-      </div>
-      <div class="github-container">
+      </li>
+      <li class="github-container">
         <img class="energy" src="/assets/neutraltype.png" alt="Normal Energy Type Symbol" width="20" height="20">
         <p class="github">@{data.persons[0].github_handle}</p>
-      </div>
-      <div class="github-container">
+      </li>
+      <li class="github-container">
         <img class="energy" src="/assets/watertype.png" alt="Water Energy Type Symbol" width="20" height="20">
         <a class="website" href="{data.persons[0].website}" target="_blank">Website</a>
-      </div>
-    </div>
-
+      </li>
+    </ul>
   </article>
 </main>
 
 <style>
-  .stars, .twinkling, .clouds {
+  .stars, .twinkling {
 	position:absolute;
 	display:block;
 	top:0;
@@ -131,7 +127,7 @@
   .stars {
     z-index: -3;
     background: #000 url('/assets/stars.png') repeat top center;
-    background-size: cover;
+    background-size: contain;
   }
 
   .twinkling{
@@ -140,27 +136,12 @@
     animation: move-twink-back 200s linear infinite;
   }
 
-  .clouds{
-    z-index: -1;
-    background:transparent url('/assets/clouds.png') repeat top center;
-    animation: move-clouds-back 200s linear infinite;
-  }
-
   @keyframes move-twink-back {
     from {
       background-position:0 0;
     }
     to {
       background-position:-10000px 5000px;
-    }
-  }
-
-  @keyframes move-clouds-back {
-    from {
-      background-position:0 0;
-    }
-    to {
-      background-position:10000px 0;
     }
   }
 
@@ -261,15 +242,15 @@
     padding-top: 30px;
   }
 
-  .info-container > div {
+  .info-container > li {
     display: flex;
     gap: 10px;   
     align-items: center; 
     justify-content: space-between;
   }
 
-  .info-container > div > p,
-  .info-container > div > a {
+  .info-container > li > p,
+  .info-container > li > a {
     font-size: 20px;
     color: black;
     font-weight: 700;
@@ -277,7 +258,7 @@
     padding: 0;
   }
 
-  .info-container > div > a.website {
+  .info-container > li > a.website {
     text-decoration: none;
     color: navy;
   }
