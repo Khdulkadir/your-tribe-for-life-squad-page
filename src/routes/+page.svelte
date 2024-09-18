@@ -108,7 +108,7 @@ let slides = [
 
   /* Right side container */
   .right {
-    flex: 0 0 60%; /* Takes 60% of the width */
+    flex: 0 0 60%; 
     position: relative;
     overflow: hidden;
     display: flex;
@@ -153,12 +153,19 @@ let slides = [
 
     .image {
       width: 100%;
-      position: relative; /* Adjusts image positioning for mobile */
+      position: relative; 
     }
 
     .next-preview {
       position: relative;
       margin: 10px auto 0;
+    }
+    .left{
+        text-align: left;
+    }
+
+    .right{
+        background: linear-gradient(to top, var(--dynamic-bg-color, orange), white 50%);
     }
   }
 </style>
