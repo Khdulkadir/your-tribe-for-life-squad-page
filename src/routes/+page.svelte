@@ -32,6 +32,7 @@ let currentIndex = 0;
     currentIndex = (currentIndex + 1) % slides.length;
   };
   </script>
+
 <main>
   <nav>
     <figure>
@@ -160,6 +161,10 @@ let currentIndex = 0;
     border: none;
     cursor: pointer;
     border-radius: 25px;
+  }
+
+  a{
+    text-decoration: none;
   }
 
   /* Right side container */
