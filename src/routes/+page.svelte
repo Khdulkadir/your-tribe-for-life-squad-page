@@ -1,6 +1,9 @@
 <script>
  import { fade } from 'svelte/transition';
-let slides = [
+ 
+ export let data
+
+ let slides = [
     {
       title: 'Squad C',
       text: 'This Squad is full of unique and creative pokemons',
@@ -8,7 +11,7 @@ let slides = [
       backgroundColor: 'orange',
       image: '/images/homepage-1.png',
       previewImage: '/images/homepage-2.png',
-      animationClass: 'fire-animation' 
+      link: '/squad/5' 
     },
     {
       title: 'Squad D',
@@ -17,15 +20,18 @@ let slides = [
       backgroundColor: 'blue',
       image: '/images/homepage-2.png',
       previewImage: '/images/homepage-1.png',
-      animationClass: 'bubble-animation'
+      link: '/squad/6'
     },
-  ];
+];
 
   let currentIndex = 0;
 
-  // Switch slide
   const goToNextSlide = () => {
     currentIndex = (currentIndex + 1) % slides.length;
+  };
+
+  const goToSlide = (index) => {
+    currentIndex = index; 
   };
   </script>
 
@@ -34,13 +40,12 @@ let slides = [
         <img src="https://fontmeme.com/permalink/240917/cc2ae6f52d521ce65cda35857dab32bc.png" alt="pokemon-font" border="0" loading="lazy">
     </figure>
 </nav>
-
 <div class="carousel">
     <!-- Left Section -->
     <div class="left">
       <h2 class="title" transition:fade>{slides[currentIndex].title}</h2>
       <p class="text" transition:fade>{slides[currentIndex].text}</p>
-      <button class="button" style="background-color: {slides[currentIndex].backgroundColor};" transition:fade>{slides[currentIndex].buttonLabel}</button>
+      <a href={slides[currentIndex].link} class="button" style="background-color: {slides[currentIndex].backgroundColor};" transition:fade>{slides[currentIndex].buttonLabel}</a>
     </div>
   
     <!-- Right Section -->
@@ -49,10 +54,9 @@ let slides = [
       <img src={slides[currentIndex].image} alt="Slide Image" class="image" transition:fade />
   
       <!-- Next Preview Image -->
-      <img src={slides[currentIndex].previewImage} alt="Next Slide Preview" class="next-preview" on:click={goToNextSlide}/>
+      <img src={slides[currentIndex].previewImage} alt="Next Slide Preview" class="next-preview" on:click={() => goToSlide((currentIndex + 1) % slides.length)}/>
     </div>
-  </div>
-
+</div>
 <style>
 
  nav {
