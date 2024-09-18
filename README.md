@@ -1,4 +1,52 @@
-# create-svelte
+![Static Badge](https://img.shields.io/badge/usage-sveltekit-orange) ![Vercel Badge](https://deploy-badge.vercel.app/vercel/deploy-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
+
+image
+
+# Your Tribe for Life Squadpage
+
+beschrijving
+
+## Inhoud
+
+### Kenmerken
+### Screenshots 
+### live pagina
+### gebruikersaanwijzing
+### Installatiehandleiding
+### huisstijl
+### Contribute
+### bronnen
+
+
+## Kenmerken
+beschrijving
+
+## Screenshots 
+beschrijving
+
+## live pagina
+beschrijving
+
+## gebruikersaanwijzing
+beschrijving
+
+## Installatiehandleiding
+beschrijving
+
+## huisstijl
+beschrijving
+
+## Contribute
+beschrijving
+
+## bronnen
+beschrijving
+
+
+
+
+
+## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
