@@ -87,7 +87,7 @@
   <article class="card">
 
     <div class="title-container">
-      <img class="card-type" src="/assets/card-type.png" alt="card type" height="20">
+      <img class="card-type" src="/assets/card-type.png" alt="card type" height="20" width="60">
       <h1>{data.persons[0].name} {data.persons[0].prefix} {data.persons[0].surname}</h1>
     </div>
     <div class="profile-picture-container">
@@ -165,8 +165,8 @@
   }
 
   main {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
     height: 100vh;
   }
 
@@ -343,7 +343,7 @@
       display: none;
     }
   }
-
+  
   @media (max-width: 768px) {
     .card {
       width: 250px;
