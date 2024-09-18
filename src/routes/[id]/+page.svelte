@@ -26,7 +26,47 @@
 
         card.addEventListener('mouseout', () => card.style.transform = cardMove(0, 0))
     })
+
+          // Mobile - touchstart/touchmove script
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        cards.forEach(card => {
+            const height = card.clientHeight;
+            const width = card.clientWidth;
+            let isHolding = false;
+
+            const calculateTilt = (x, y) => {
+                const multiplier = 30;
+                const xRotate = multiplier * ((x - width / 2) / width);
+                const yRotate = -multiplier * ((y - height / 2) / height);
+                card.style.transform = cardMove(xRotate, yRotate);
+            };
+
+            card.addEventListener('touchstart', (e) => {
+                isHolding = true;
+                const touch = e.touches[0];
+                const x = touch.clientX - card.getBoundingClientRect().left;
+                const y = touch.clientY - card.getBoundingClientRect().top;
+                calculateTilt(x, y);
+            });
+
+            card.addEventListener('touchmove', (e) => {
+                if (isHolding) {
+                    const touch = e.touches[0];
+                    const x = touch.clientX - card.getBoundingClientRect().left;
+                    const y = touch.clientY - card.getBoundingClientRect().top;
+                    calculateTilt(x, y);
+                }
+            });
+
+            card.addEventListener('touchend', () => {
+                isHolding = false;
+                card.style.transform = cardMove(0, 0);
+            });
+        });
+    }
   })
+
+
 </script>
 
 <main>
@@ -91,11 +131,13 @@
   .stars {
     z-index: -3;
     background: #000 url('/assets/stars.png') repeat top center;
+    background-size: cover;
   }
 
   .twinkling{
     z-index: -2;
     background:transparent url('/assets/twinkling.png') repeat top center;
+    background-size: cover;
     animation: move-twink-back 200s linear infinite;
   }
 
@@ -215,8 +257,8 @@
     flex-direction: column;
     gap: 10px;
     align-self: center;
-    padding-top: 30px;
     width: 100%;
+    padding-top: 30px;
   }
 
   .info-container > div {
@@ -301,6 +343,23 @@
       filter: brightness(0.8);
       display: none;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 200px;
+      height: 300px;
+    }
+
+    .profile-picture-container {
+      width: 175px;
+      height: 100px;
+    }
+
+    .info-container {
+      padding-top: 10px;
+    }
+
   }
 
 </style>
