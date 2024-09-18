@@ -187,8 +187,8 @@
   }
 
   .card {
-    height: 400px;
-    width: 250px;
+    height: 450px;
+    width: 300px;
     background-image: url(/assets/card-background.jpg);
     background-size: cover;
     flex-direction: column;
@@ -236,7 +236,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 250px;
     height: 175px;
     border: #d6d9d9 4px solid;
     align-self: center;
@@ -344,21 +344,20 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     .card {
-      width: 200px;
-      height: 300px;
+      width: 250px;
+      height: 350px;
     }
 
     .profile-picture-container {
-      width: 175px;
-      height: 100px;
+      width: 200px;
+      height: 120px;
     }
 
     .info-container {
-      padding-top: 10px;
+      padding-top: 0px;
     }
-
   }
 
 </style>
