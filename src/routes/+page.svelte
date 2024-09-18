@@ -2,18 +2,18 @@
  import { fade } from 'svelte/transition';
 let slides = [
     {
-      title: 'Squad 1',
+      title: 'Squad C',
       text: 'This Squad is full of unique and creative pokemons',
-      buttonLabel: 'Squad 1 Pokemons',
+      buttonLabel: 'Squad C Pokemons',
       backgroundColor: 'orange',
       image: '/images/homepage-1.png',
       previewImage: '/images/homepage-2.png',
       animationClass: 'fire-animation' 
     },
     {
-      title: 'Squad 2',
+      title: 'Squad D',
       text: 'This Squad has good skills and are creative',
-      buttonLabel: 'Squad 2 Pokemons',
+      buttonLabel: 'Squad D Pokemons',
       backgroundColor: 'blue',
       image: '/images/homepage-2.png',
       previewImage: '/images/homepage-1.png',
@@ -57,40 +57,39 @@ let slides = [
 
  nav {
     display: flex;
-    justify-content: center; /* Center the logo horizontally */
+    justify-content: center; 
     padding: 1rem;
   }
 
   nav img {
-    max-width: 150px; /* Make the logo smaller */
+    max-width: 150px; 
     height: auto;
   }
    .carousel {
     font-family: 'Poppins', sans-serif;
     display: flex;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     overflow: hidden;
     position: relative;
   }
 
-  /* Left side container */
   .left {
-    flex: 0 0 40%; /* Takes 40% of the width */
+    flex: 0 0 40%; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    justify-content: center; 
     padding: 1rem; 
     z-index: 2;
   }
 
   .title {
-    font-size: 32px; /* Larger font size */
+    font-size: 32px; 
     margin-bottom: 20px;
   }
 
   .text {
-    font-size: 18px; /* Larger font size */
+    font-size: 18px; 
     margin-bottom: 30px;
   }
 
@@ -118,11 +117,11 @@ let slides = [
     transition: background 0.5s ease; /* Smooth transition for background */
   }
 
-  /* Main image */
+
   .image {
     max-width: 90%; /* Adjusted width for responsiveness */
-    max-height: 80vh; /* Prevent overflow in height */
-    object-fit: contain; /* Ensure image scales correctly */
+    max-height: 80vh; 
+    object-fit: contain;
     transition: opacity 0.5s ease;
   }
 
