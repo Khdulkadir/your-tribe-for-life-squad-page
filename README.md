@@ -1,50 +1,56 @@
-![Static Badge](https://img.shields.io/badge/usage-sveltekit-orange) ![Vercel Badge](https://deploy-badge.vercel.app/vercel/deploy-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
-
-image
-
 # Your Tribe for Life Squadpage
-
-beschrijving
+Welkom bij de Your Tribe for Life squadpage, een website gebouwd met SvelteKit. Deze squadpage biedt een overzicht van de squads van jaar 2, waarbij elke squad wordt weergegeven in een uniek Pokémon thema. De gebruiker kan eenvoudig een squad selecteren, door de leden bladeren, en meer informatie over specifieke leden verkrijgen via Pokémon kaarten met een animaties.
+![Static Badge](https://img.shields.io/badge/usage-sveltekit-orange) ![Vercel Badge](https://deploy-badge.vercel.app/vercel/deploy-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## Inhoud
 
-### Kenmerken
-### Screenshots 
-### live pagina
-### gebruikersaanwijzing
-### Installatiehandleiding
-### huisstijl
-### Contribute
-### bronnen
+### - Kenmerken
+### - Screenshots 
+### - live pagina
+### - gebruikersaanwijzing
+### - Installatiehandleiding
+### - huisstijl
+### - Contribute
+### - bronnen
 
 
 ## Kenmerken
-beschrijving
-
-## Screenshots 
-beschrijving
+- Pokémon thema: Elke squad is weergegeven met een Pokémon type: grass, lightning of fire.
+- Homepagina: De gebruiker kan een squad selecteren. Elke squad heeft zijn eigen thema, gebasseerd op het bijbehorende Pokémon type.
+- Overzichtspagina: De leden van de geselecteerde squad worden weergegeven als interactieve Pokémon kaarten. Hover over een kaart om de naam van het squadlid te zien en meer details te krijgen.
+- Detailpagina: Bij het klikken op een lid toont een animatie hoe een Pokéball opent en onthult meer informatie over dat lid. 
+- SvelteKit & Directus API: De website is gebouwd met SvelteKit en haalt de data dynamisch op via de Directus API.
+  
+## preview
 
 ## live pagina
-beschrijving
+Bekijk de live versie van de website hier:
 
 ## gebruikersaanwijzing
-beschrijving
+### Navigeren door de pagina
+Homepagina:
+- De gebruiker begint op de homepagina, waar een selectie gemaakt kan worden tussen de verschillende squads. Elke squad is te herkennen aan zijn unieke kleuren en layout.
 
-## Installatiehandleiding
-beschrijving
+Overzichtspagina:
+- Nadat een squad is geselecteerd, navigeert de gebruiker naar de overzichtspagina. Hier worden alle leden van de squad weergegeven als interactieve Pokémon kaarten. De gebruiker kan over elke kaart hoveren om de naam van dat lid te zien en door te klikken naar hun detailpagina.
+
+Detailpagina:
+- Door op een lid te klikken, gaat de gebruiker naar de detailpagina van die specifieke lid. Hier ziet de gebruiker een Pokéball animatie, waarna de volledige Pokémon kaart van het lid wordt onthuld met gedetailleerde informatie.
 
 ## huisstijl
-beschrijving
+### Thema
 
-## Contribute
-beschrijving
+### Lettertype
+
+### Kaartenlayout
+Pokémonkaarten ontwerp: De squadleden worden weergegeven in de vorm van klassieke Pokémonkaarten.
+
+### Animaties
+Pokéball animatie: De detailpagina bevat een animatie waarbij een Pokéball wordt geopend en de Pokémonkaart van het squadlid tevoorschijn komt.
 
 ## bronnen
-beschrijving
 
-
-
-
+# Installatiehandleiding
 
 ## create-svelte
 
