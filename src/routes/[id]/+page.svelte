@@ -137,7 +137,6 @@
   .twinkling{
     z-index: -2;
     background:transparent url('/assets/twinkling.png') repeat top center;
-    background-size: cover;
     animation: move-twink-back 200s linear infinite;
   }
 
