@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
  import { fade } from 'svelte/transition';
  
  export let data
@@ -23,6 +24,7 @@
       link: '/squad/6'
     },
 ];
+
 
 let currentIndex = 0;
   // Switch slide
