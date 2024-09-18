@@ -24,14 +24,10 @@
     },
 ];
 
-  let currentIndex = 0;
-
+let currentIndex = 0;
+  // Switch slide
   const goToNextSlide = () => {
     currentIndex = (currentIndex + 1) % slides.length;
-  };
-
-  const goToSlide = (index) => {
-    currentIndex = index; 
   };
   </script>
 
@@ -50,11 +46,11 @@
   
     <!-- Right Section -->
     <div class="right" style="--dynamic-bg-color: {slides[currentIndex].backgroundColor};">
-      <!-- Main Image -->
-      <img src={slides[currentIndex].image} alt="Slide Image" class="image" transition:fade />
-  
-      <!-- Next Preview Image -->
-      <img src={slides[currentIndex].previewImage} alt="Next Slide Preview" class="next-preview" on:click={() => goToSlide((currentIndex + 1) % slides.length)}/>
+    <!-- Main Image -->
+    <img src={slides[currentIndex].image} alt="Slide Image" class="image" transition:fade />
+
+    <!-- Next Preview Image -->
+    <img src={slides[currentIndex].previewImage} alt="Next Slide Preview" class="next-preview" on:click={goToNextSlide}/>
     </div>
 </div>
 <style>
