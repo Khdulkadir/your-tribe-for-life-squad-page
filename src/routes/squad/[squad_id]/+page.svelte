@@ -43,9 +43,14 @@
       updateCarousel();
     });
 </script>
-  
+ 
+<!-- <img src="/pikachu.webp" alt="pikachu" /> -->
 <main>
+    <span>
     <h1>Squad</h1>
+    <h3>Hover over me!</h3>
+    <img src="/pikachu.webp" alt="pikachu" />
+    </span>
     <section class="carousel" aria-label="Squad Carousel">
       <button class="prev" on:click={prevSlide} aria-label="Previous Slide">◀</button>
 
@@ -64,19 +69,29 @@
 <style>
     :global(body) {
       background-color: #fff3b3;
-      font-family: 'Pokemon Hollow', sans-serif;
+      font-family: 'Irish Grover', sans-serif;
       margin: 1em;
+      height: 100%;
     }
-  
+    img{
+        display: none;
+    }
+    
     main {
       border: solid .3em #e4b849;
       padding: 1em 0;
+      min-height: 100vh;
     }
   
     h1 {
       text-align: center;
       font-size: 4em;
       color: #074794;
+    }
+    h3{
+        text-align: center;
+        font-size: 2em;
+        color: #9d7e21;
     }
     .cards{
         display: flex;
@@ -91,6 +106,7 @@
         display:none
     }
   @media (min-width: 600px) {
+
     /* Carousel layout */
     .carousel {
       position: relative;
@@ -177,5 +193,59 @@
       opacity: 0.3;
     }
 }
+@media (min-width: 1024px) {
+    :global(body) {
+        background-color: rgba(90, 252, 236, 0.929);
+    }
+    h1{
+        color: rgba(90, 252, 236, 0.929);
+    }
+    h3{
+        color: #f1d749;
+    }
+    img{
+        display: block;
+    }
+    .prev, .next{
+        color: azure;
+        background-color: rgb(65, 225, 225);
+        padding: .5em;
+        border-radius: .5em;
+    }
+    main {
+        display: flex;
+        align-items: center;
+        background-color: #000e34;
+    }
+    span{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        font-size: 1.5em;
+    }
+    img{
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    filter: drop-shadow(0 0 15px rgba(90, 252, 236, 0.929));
+    transform: perspective(800px) rotateY(0deg) rotateX(0deg);
+        transition: transform 0.5s ease;
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0% {
+            transform: translateY(0px) perspective(800px) rotateY(0deg) rotateX(0deg);
+        }
+        50% {
+            transform: translateY(-20px) perspective(800px) rotateY(20deg) rotateX(10deg);
+        }
+        100% {
+            transform: translateY(0px) perspective(800px) rotateY(0deg) rotateX(0deg);
+        }
+}
+}
+
 </style>
   

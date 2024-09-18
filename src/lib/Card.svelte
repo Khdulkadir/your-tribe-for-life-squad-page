@@ -32,13 +32,38 @@
         position: relative;
       }
       
+      .card-front {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Zorg ervoor dat het glanseffect binnen de kaart blijft */
+  border-radius: 15px; /* Zorg ervoor dat het effect de afgeronde hoeken volgt */
+}
+
+.card-front::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 180deg, #ff00ff73, #00ffff99, #ea0b6d85, #00ff006e, #0000ff82, #ff00ff82);
+  z-index: 1;
+  transform: rotate(90deg);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  border-radius: inherit; /* Zorg ervoor dat de gradient ook de afgeronde hoeken volgt */
+}
+
+
+      
       .card-front, .card-back {
         position: absolute;
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
         border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px #86fbf8d5;
         display: flex;
         justify-content: center;
         align-items: center;
