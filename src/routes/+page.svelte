@@ -9,7 +9,7 @@
       title: 'Squad C',
       text: 'This Squad is full of unique and creative pokemons',
       buttonLabel: 'Squad C Pokemons',
-      backgroundColor: 'orange',
+      backgroundColor: 'red',
       image: '/images/homepage-1.png',
       previewImage: '/images/homepage-2.png',
       link: '/squad/5' 
@@ -76,6 +76,7 @@ let currentIndex = 0;
   .stars {
     z-index: -3;
     background: #000 url('/images/stars.png') repeat top center;
+    background-size: cover;
   }
 
   .twinkling{
@@ -111,10 +112,8 @@ let currentIndex = 0;
  nav {
     position: absolute;
     top: 1rem;
-    left:50%;
-    transform: (-50%);
+    align-items: center;
     z-index: 10;
-
     padding: 1rem;
   }
 
@@ -138,6 +137,7 @@ let currentIndex = 0;
     justify-content: center; 
     padding: 1rem; 
     z-index: 2;
+    color: #fff;
   }
 
   .title {
@@ -170,7 +170,7 @@ let currentIndex = 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to left, var(--dynamic-bg-color, orange), white 50%);
+    background: linear-gradient(to left, var(--dynamic-bg-color, red), transparent);
     transition: background 0.5s ease; /* Smooth transition for background */
   }
 
@@ -221,7 +221,7 @@ let currentIndex = 0;
     }
 
     .right{
-        background: linear-gradient(to top, var(--dynamic-bg-color, orange), white 50%);
+        background: linear-gradient(to top, var(--dynamic-bg-color, red), transparent);
     }
   }
 </style>
