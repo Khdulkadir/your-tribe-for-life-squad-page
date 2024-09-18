@@ -67,12 +67,12 @@
 </main>
   
 <style>
-    :global(body) {
+    /* :global(body) {
       background-color: #fff3b3;
       font-family: 'Irish Grover', sans-serif;
       margin: 1em;
       height: 100%;
-    }
+    } */
     img{
         display: none;
     }
