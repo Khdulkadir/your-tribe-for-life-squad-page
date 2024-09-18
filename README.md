@@ -47,12 +47,6 @@ Overzichtspagina:
 Detailpagina:
 - Door op een lid te klikken, gaat de gebruiker naar de detailpagina van die specifieke lid. Hier ziet de gebruiker een Pokéball animatie, waarna de volledige Pokémon kaart van het lid wordt onthuld met gedetailleerde informatie.
 
-------------------------------------------------------------------------------------------------------------------
-## Installatiehandleiding
-Instructies voor het lokaal opzetten van de squadpage, zodat ontwikkelaars het project kunnen downloaden, installeren en zelf kunnen draaien met behulp van SvelteKit.
-
-------------------------------------------------------------------------------------------------------------------
-
 
 ## Huisstijl
 Informatie over de ontwerpkeuzes en branding van de squadpage, inclusief kleurenpaletten, typografie en andere visuele elementen die bijdragen aan het Pokémon-thema.
@@ -62,10 +56,11 @@ Voor deze website hebben we gekozen voor een Pokémon-thema, waarbij we gebruikm
 
 ------------------------------------------------------------------------------------------------------------------
 ### Lettertype
+
 De verschillende lettertype die we gebruiken zijn:
 - 
 
-... gebruiken we voor broodteksten, en ... gebruiken we meer voor headings en andere grote teksten.
+x gebruiken we voor broodteksten, en x gebruiken we meer voor headings en andere grote teksten.
 ------------------------------------------------------------------------------------------------------------------
 
 
