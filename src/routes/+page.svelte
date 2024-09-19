@@ -41,7 +41,6 @@ let currentIndex = 0;
 </nav>
   <div class="stars"></div>
   <div class="twinkling"></div>
-  <div class="clouds"></div>
 <div class="carousel">
     <!-- Left Section -->
     <div class="left">
@@ -63,7 +62,7 @@ let currentIndex = 0;
 </main>
 
 <style>
-  .stars, .twinkling, .clouds {
+  .stars, .twinkling {
 	position:absolute;
 	display:block;
 	top:0;
@@ -76,8 +75,8 @@ let currentIndex = 0;
 
   .stars {
     z-index: -3;
-    background: #000 url('/images/stars.png') repeat top center;
-    background-size: cover;
+    background: #000 url('/assets/stars.png') repeat top center;
+    background-size: contain;
   }
 
   .twinkling{
@@ -86,27 +85,12 @@ let currentIndex = 0;
     animation: move-twink-back 200s linear infinite;
   }
 
-  .clouds{
-    z-index: -1;
-    background:transparent url('/images/clouds.png') repeat top center;
-    animation: move-clouds-back 200s linear infinite;
-  }
-
   @keyframes move-twink-back {
     from {
       background-position:0 0;
     }
     to {
       background-position:-10000px 5000px;
-    }
-  }
-
-  @keyframes move-clouds-back {
-    from {
-      background-position:0 0;
-    }
-    to {
-      background-position:10000px 0;
     }
   }
 
