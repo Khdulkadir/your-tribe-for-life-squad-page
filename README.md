@@ -15,8 +15,6 @@ Welkom bij de Your Tribe for Life squadpage, een website gebouwd met SvelteKit. 
 
 
 ## Kenmerken
-Een overzicht van de belangrijkste functies van de Your Tribe for Life squadpage, zoals de kaarten voor ledeninformatie en een gebruiksvriendelijke interface.
-
 - Pokémon thema: Elke squad is weergegeven met een Pokémon type: grass, lightning of fire.
 - Homepagina: De gebruiker kan een squad selecteren. Elke squad heeft zijn eigen thema, gebasseerd op het bijbehorende Pokémon type.
 - Overzichtspagina: De leden van de geselecteerde squad worden weergegeven als interactieve Pokémon kaarten. Hover over een kaart om de naam van het squadlid te zien en meer details te krijgen.
@@ -38,8 +36,6 @@ Bekijk deze [hier](https://your-tribe-for-life-squad-page-plum-phi.vercel.app/)!
 
 
 ## Gebruikersaanwijzing
-Een gedetailleerde gids die uitlegt hoe gebruikers de squadpage kunnen gebruiken, inclusief stappen voor het selecteren van een squad en het navigeren door de beschikbare informatie over leden.
-
 ### Navigeren door de pagina
 Homepagina:
 - De gebruiker begint op de homepagina, waar een selectie gemaakt kan worden tussen de verschillende squads. Elke squad is te herkennen aan zijn unieke kleuren en layout.
@@ -58,15 +54,6 @@ Informatie over de ontwerpkeuzes en branding van de squadpage, inclusief kleuren
 Voor deze website hebben we gekozen voor een Pokémon-thema, waarbij we gebruikmaken van enkele iconische Pokémon als mascottes voor de drie verschillende squads. Elke squad wordt vertegenwoordigd door een unieke 'starter' Pokémon die als symbool fungeert voor de groep. Daarnaast gebruiken we het idee van de Pokémon trading card game voor het ontwerp van de squadleden-kaarten. Deze kaarten dienen als een manier om meer informatie over de squadleden te tonen. Om de kaarten nog interactiever te maken, hebben we het evolutiesysteem van Pokémon toegepast, waarbij de leden onthuld worden in een vel licht.
 
 ------------------------------------------------------------------------------------------------------------------
-### Lettertype
-
-De verschillende lettertype die we gebruiken zijn:
-- 
-
-x gebruiken we voor broodteksten, en x gebruiken we meer voor headings en andere grote teksten.
-------------------------------------------------------------------------------------------------------------------
-
-
 ### Kaartenlayout
 Pokémonkaarten ontwerp: De squadleden worden weergegeven in de vorm van klassieke Pokémonkaarten.
 
