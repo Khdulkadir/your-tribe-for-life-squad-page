@@ -20,7 +20,7 @@
       const items = document.querySelectorAll(".carousel__item");
       items.forEach((item, index) => {
         const position = (index - currentIndex + totalItems) % totalItems;
-        item.dataset.pos = position - 2;
+        item.dataset.pos = position - 3;
       });
     }
   
@@ -56,7 +56,7 @@
 
       <ul class="cards">
         {#each data.persons as person, index}
-          <li class="carousel__item" data-pos={index - 2} aria-live="polite">
+          <li class="carousel__item" data-pos={index - 3} aria-live="polite">
             <Card name={person.name} id={person.id} />
           </li>
         {/each}
@@ -159,40 +159,76 @@
       position: absolute;
       transition: all 0.5s ease;
       transform-style: preserve-3d;
-      opacity: 0.5;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 0;
     }
   
-    /* Met data-pos bepaal je de positie van de items, de middelste is 0 en links en rechts daarvan -1 en -2 en 1 en 2 */
+  
+
+/*  Ik heb de kaarte gepositioneerd en getransformeerd met behulp van de data-pos attribuut. */
+    /* Kaarten -3, -2, -1 komen links van de voorste kaart */
+    .carousel__item[data-pos="-3"] {
+      transform: translateX(-450px) scale(0.5);
+      z-index: 0;
+      opacity: 0.2;
+      visibility: visible;
+      pointer-events: none;
+    }
+
     .carousel__item[data-pos="-2"] {
-      transform: translateX(-300px) scale(0.6) rotateY(30deg);
+      transform: translateX(-300px) scale(0.6);
       z-index: 1;
       opacity: 0.3;
+      visibility: visible;
+      pointer-events: none;
     }
-  
+
     .carousel__item[data-pos="-1"] {
-      transform: translateX(-150px) scale(0.8) rotateY(15deg);
+      transform: translateX(-150px) scale(0.8);
       z-index: 2;
       opacity: 0.5;
+      visibility: visible;
+      pointer-events: none;
     }
-  
+
+    /* De voorste kaart */
     .carousel__item[data-pos="0"] {
       transform: translateX(0) scale(1) rotateY(0deg);
       z-index: 3;
       opacity: 1;
+      visibility: visible;
+      pointer-events: auto; /* Hover toegestaan voor alleen de voorste kaart */
+      transform: scale(1.1);
     }
-  
+
+    /* Kaarten 1, 2, 3 komen rechts van de voorste kaart */
     .carousel__item[data-pos="1"] {
-      transform: translateX(150px) scale(0.8) rotateY(-15deg);
+      transform: translateX(150px) scale(0.8);
       z-index: 2;
       opacity: 0.5;
+      visibility: visible;
+      pointer-events: none;
     }
-  
+
     .carousel__item[data-pos="2"] {
-      transform: translateX(300px) scale(0.6) rotateY(-30deg);
+      transform: translateX(300px) scale(0.6);
       z-index: 1;
       opacity: 0.3;
+      visibility: visible;
+      pointer-events: none;
     }
-}
+
+    .carousel__item[data-pos="3"] {
+      transform: translateX(450px) scale(0.5);
+      z-index: 0;
+      opacity: 0.2;
+      visibility: visible;
+      pointer-events: none;
+    }
+  }
+  
+
 @media (min-width: 1024px) {
     :global(body) {
         background-color: rgba(90, 252, 236, 0.929);
@@ -248,4 +284,3 @@
 }
 
 </style>
-  
