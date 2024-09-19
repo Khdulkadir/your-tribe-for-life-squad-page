@@ -25,7 +25,10 @@ Een overzicht van de belangrijkste functies van de Your Tribe for Life squadpage
 
 ------------------------------------------------------------------------------------------------------------------
 ## Preview
-Een visuele demonstratie van de website in actie, zodat gebruikers een idee krijgen van hoe de squadpage eruitziet en hoe het werkt voordat ze de live pagina bezoeken.
+![Screenshot 2024-09-19 191545](https://github.com/user-attachments/assets/7e7859dd-b0b5-4494-89b5-d9b30b8820fa)
+![Screenshot 2024-09-19 191611](https://github.com/user-attachments/assets/2d117ffd-88db-4c5f-ad20-2b99412b2770)
+![Screenshot 2024-09-19 191716](https://github.com/user-attachments/assets/b5c08b46-6683-486c-aeac-ada621947eb4)
+
 ------------------------------------------------------------------------------------------------------------------
 
 
