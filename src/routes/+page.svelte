@@ -1,116 +1,123 @@
 <script>
-    import { onMount } from 'svelte';
- import { fade } from 'svelte/transition';
- 
- export let data
+  import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
 
- let slides = [
+  export let data;
+
+  let slides = [
     {
-      title: 'Squad C',
-      text: 'This Squad is full of unique and creative pokemons',
-      buttonLabel: 'Squad C Pokemons',
-      backgroundColor: 'red',
-      image: '/images/homepage-1.png',
-      previewImage: '/images/homepage-2.png',
-      link: '/squad/5' 
+      title: "Squad C",
+      text: "This Squad is full of unique and creative pokemons",
+      buttonLabel: "Squad C Pokemons",
+      backgroundColor: "red",
+      image: "/images/homepage-1.png",
+      previewImage: "/images/homepage-2.png",
+      link: "/squad/5",
     },
     {
-      title: 'Squad D',
-      text: 'This Squad has good skills and are creative',
-      buttonLabel: 'Squad D Pokemons',
-      backgroundColor: 'blue',
-      image: '/images/homepage-2.png',
-      previewImage: '/images/homepage-1.png',
-      link: '/squad/6'
+      title: "Squad D",
+      text: "This Squad has good skills and are creative",
+      buttonLabel: "Squad D Pokemons",
+      backgroundColor: "blue",
+      image: "/images/homepage-2.png",
+      previewImage: "/images/homepage-1.png",
+      link: "/squad/6",
     },
-];
+  ];
 
-
-let currentIndex = 0;
+  let currentIndex = 0;
   // Switch slide
   const goToNextSlide = () => {
     currentIndex = (currentIndex + 1) % slides.length;
   };
-  </script>
+</script>
 
 <main>
   <nav>
     <figure>
-        <img src="https://fontmeme.com/permalink/240917/cc2ae6f52d521ce65cda35857dab32bc.png" alt="pokemon-font" border="0" loading="lazy">
+      <img
+        src="https://fontmeme.com/permalink/240917/cc2ae6f52d521ce65cda35857dab32bc.png"
+        alt="pokemon-font"
+        border="0"
+        loading="lazy"
+      />
     </figure>
-</nav>
+  </nav>
   <div class="stars"></div>
   <div class="twinkling"></div>
   <div class="clouds"></div>
-<div class="carousel">
+  <div class="carousel">
     <!-- Left Section -->
     <div class="left">
       <h2 class="title" transition:fade>{slides[currentIndex].title}</h2>
       <p class="text" transition:fade>{slides[currentIndex].text}</p>
       <a href={slides[currentIndex].link} class="button" style="background-color: {slides[currentIndex].backgroundColor};" transition:fade>{slides[currentIndex].buttonLabel}</a>
     </div>
-  
+
     <!-- Right Section -->
-    <div class="right" style="--dynamic-bg-color: {slides[currentIndex].backgroundColor};">
-    <!-- Main Image -->
-    <img src={slides[currentIndex].image} alt="Slide Image" class="image" transition:fade />
+    <div
+      class="right" style="--dynamic-bg-color: {slides[currentIndex].backgroundColor};">
+      <!-- Main Image -->
+      <img src={slides[currentIndex].image} alt="Slide Image" class="image" transition:fade/>
 
-    <!-- Next Preview Image -->
-    <img src={slides[currentIndex].previewImage} alt="Next Slide Preview" class="next-preview" on:click={goToNextSlide}/>
+      <!-- Next Preview Image -->
+      <img src={slides[currentIndex].previewImage} alt="Next Slide Preview" class="next-preview" on:click={goToNextSlide}/>
     </div>
-</div>
-
+  </div>
 </main>
 
 <style>
-  .stars, .twinkling, .clouds {
-	position:absolute;
-	display:block;
-	top:0;
-  bottom:0;
-	left:0;
-  right:0;
-	width:100%;
-  height:100%;
-}
+
+  .stars,
+  .twinkling,
+  .clouds {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   .stars {
     z-index: -3;
-    background: #000 url('/images/stars.png') repeat top center;
+    background: #000 url("/images/stars.png") repeat top center;
     background-size: cover;
   }
 
-  .twinkling{
+  .twinkling {
     z-index: -2;
-    background:transparent url('/images/twinkling.png') repeat top center;
+    background: transparent url("/images/twinkling.png") repeat top center;
     animation: move-twink-back 200s linear infinite;
   }
 
-  .clouds{
+  .clouds {
     z-index: -1;
-    background:transparent url('/images/clouds.png') repeat top center;
+    background: transparent url("/images/clouds.png") repeat top center;
     animation: move-clouds-back 200s linear infinite;
   }
 
   @keyframes move-twink-back {
     from {
-      background-position:0 0;
+      background-position: 0 0;
     }
     to {
-      background-position:-10000px 5000px;
+      background-position: -10000px 5000px;
     }
   }
 
   @keyframes move-clouds-back {
     from {
-      background-position:0 0;
+      background-position: 0 0;
     }
     to {
-      background-position:10000px 0;
+      background-position: 10000px 0;
     }
   }
 
- nav {
+  nav {
     position: absolute;
     top: 1rem;
     align-items: center;
@@ -119,42 +126,42 @@ let currentIndex = 0;
   }
 
   nav img {
-    max-width: 150px; 
+    max-width: 150px;
     height: auto;
   }
-   .carousel {
-    font-family: 'Poppins', sans-serif;
+  .carousel {
+    font-family: "Poppins", sans-serif;
     display: flex;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     overflow: hidden;
     position: relative;
   }
 
   .left {
-    flex: 0 0 40%; 
+    flex: 0 0 40%;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    padding: 1rem; 
+    justify-content: center;
+    padding: 1rem;
     z-index: 2;
     color: #fff;
   }
 
   .title {
-    font-size: 32px; 
+    font-size: 32px;
     margin-bottom: 20px;
   }
 
   .text {
-    font-size: 18px; 
+    font-size: 18px;
     margin-bottom: 30px;
   }
 
   .button {
     padding: 1rem;
     width: 60%;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-size: 1rem;
     color: white;
@@ -163,26 +170,29 @@ let currentIndex = 0;
     border-radius: 25px;
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 
   /* Right side container */
   .right {
-    flex: 0 0 60%; 
+    flex: 0 0 60%;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to left, var(--dynamic-bg-color, red), transparent);
+    background: linear-gradient(
+      to left,
+      var(--dynamic-bg-color, red),
+      transparent
+    );
     transition: background 0.5s ease; /* Smooth transition for background */
   }
 
-
   .image {
     max-width: 90%; /* Adjusted width for responsiveness */
-    max-height: 80vh; 
+    max-height: 80vh;
     object-fit: contain;
     transition: opacity 0.5s ease;
   }
@@ -192,12 +202,14 @@ let currentIndex = 0;
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: calc(100px + .5rem);
+    height: calc(100px + .5rem);
     cursor: pointer;
     z-index: 3; /* Ensure it is above other elements */
-    border: 2px solid #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: .5rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
   }
 
   /* Responsive styles */
@@ -207,26 +219,35 @@ let currentIndex = 0;
       height: 100vh;
     }
 
-    .left, .right {
+    .left,
+    .right {
       width: 100%;
       text-align: center;
     }
 
     .image {
       width: 100%;
-      position: relative; 
+      position: relative;
+      margin-bottom: auto;
+      bottom: 4rem;
+      max-width: 75%;
     }
 
     .next-preview {
       position: relative;
       margin: 10px auto 0;
     }
-    .left{
-        text-align: left;
+    .left {
+      text-align: left;
+      margin-top: 4rem;
     }
 
-    .right{
-        background: linear-gradient(to top, var(--dynamic-bg-color, red), transparent);
+    .right {
+      background: linear-gradient(
+        to top,
+        var(--dynamic-bg-color, red),
+        transparent
+      );
     }
   }
 </style>
